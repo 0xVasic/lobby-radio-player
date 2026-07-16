@@ -1,86 +1,90 @@
-# Lobby Radio Player v1.0 
+# Lobby Radio Player v1.0
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Platform: Windows](https://img.shields.io/badge/Platform-Windows-blue.svg)]()
 [![Framework: .NET Framework 4.7.2](https://img.shields.io/badge/Framework-.NET%20Framework%204.7.2-purple.svg)]()
 
-## Why I built this?
+---
 
-I built this app because of a very specific, real-world headache: **I needed to set up background music for a local venue and automatically inject promotional ad every few minutes.** 
+## What does it look like?
 
-When I looked for a solution, I realized that every software capable of doing this is either locked behind an expensive monthly subscription, targeted at massive enterprise systems, or incredibly overcomplicated to set up. I just wanted something simple, lightweight, and reliable that "just works" on any Windows PC. 
+<img width="273" height="274" alt="Screenshot_15" src="https://github.com/user-attachments/assets/f8706578-6966-486b-88fc-0cea38403016" />
 
-Since I couldn't find a straightforward, free option - **I decided to build it myself and share it with everyone.**
+*A clean, distraction-free interface. No bloated settings, no confusion—ready to roll in three clicks.*
 
 ---
 
-## What it solves & Why it’s the perfect choice:
+## Why I built this? (The Problem)
 
-*   **Completely Free & Open-Source:** No subscriptions, no registration, and no hidden fees.
-*   **Zero-Setup Autopilot:** You don't need a degree in IT. Just paste your radio stream link, select your local `.mp3` or `.wav` ad file, set the interval in seconds, and hit **PLAY**.
-*   **Seamless Transitions (No Awkward Silences):** Most basic players just cut the music and play the ad. This player smoothly fades out the music, plays your ad, and gently fades the music back in.
-*   **Ultra-Lightweight & Bulletproof:** Written in VB.NET on .NET Framework 4.7.2, it runs on almost any Windows machine without freezing the user interface, and automatically heals/reconnects if the internet drops.
+This project started because of a very specific, real-world headache. **I needed to set up background music for a local business and automatically inject a promotional audio ad every few minutes.** 
+
+When I looked online for a solution, I was honestly shocked. Every software capable of doing this was either:
+1. Locked behind an expensive, recurring monthly subscription.
+2. Built for massive radio stations, looking like the control panel of a nuclear power plant.
+3. Way too complicated for the non-tech-savvy staff working at the venue.
+
+I just wanted something **dead simple, lightweight, and reliable** that "just works" on any Windows PC. Since I couldn't find a straightforward, free option...
+
+**...I sat down, wrote it myself, and decided to share it with everyone for free.**
 
 ---
 
-## Key Features & Capabilities
+## What it solves & Why you'll love it
 
-*   **Multithreaded Connection Engine:** All streaming operations, network buffering, and reconnection watchdog tasks run entirely on background threads. The user interface remains 100% responsive—no application freezing, lag, or loading cursors.
-*   **Smart Ad Injection (Fade In/Out):** To guarantee a premium customer experience, the system automatically and smoothly fades out the live stream before playing a local advertisement, and gently fades the music back in once the ad finishes.
-*   **Active Hours Scheduler:** Set your venue's operating hours (e.g., `08:00` to `23:00`). The system automatically handles standby outside of these hours and wakes up instantly when the shift starts, saving bandwidth and system resources.
-*   **Self-Healing Connection Guard:** Built-in watchdog timers actively monitor stream states. If your internet connection drops, the system stops current tasks and silently attempts reconnection every 5 seconds until the stream is restored.
-*   **Independent Volume Controls:** Customize separate volume levels for both the background music and the local advertisements in real-time from the Settings panel.
+*   **100% Free & Open-Source:** No subscriptions, no registration, no hidden paywalls, and no annoying ads pushed by me. It's yours forever.
+*   **Zero-Setup Autopilot:** You don't need an IT degree to run this. Just paste your radio stream link, pick your local `.mp3` or `.wav` ad file, set the interval in seconds, and hit **PLAY**. That's literally it.
+*   **Seamless Transitions (No Awkward Cuts):** Most basic audio players just abruptly cut the music and blast the ad. This player smoothly fades out the stream (fade out), plays your ad, and gently fades the music back in (fade in). It sounds incredibly professional, just like a real radio station.
+*   **No UI Freezing (Multithreaded Engine):** Have you ever had an app freeze and show that annoying Windows (Not Responding) window while loading a stream? Not here. All heavy lifting—network buffering, timers, and streaming—runs silently on background threads. The interface stays buttery smooth and responsive.
+*   **Self-Healing Connection Guard:** If the venue's internet drops, the player won't crash or freeze. A background watchdog quietly attempts to reconnect every 5 seconds until the music starts playing again.
+
+---
+
+## Cool Features Under the Hood
+
+*   **Active Hours Scheduler:** Set your operating hours (e.g., `08:00` to `23:00`). The program will automatically put itself on standby when the venue closes and wake up on time when the morning shift starts—saving internet bandwidth and system resources.
+*   **Independent Volume Controls:** Set a comfortable, low background music level for your guests, while making the advertisements slightly louder and clearer so they actually get noticed.
 
 ---
 
 ## Hardware & Setup Requirements
 
-Before starting the playback, please ensure:
-1.  **Sound System Connection:** The computer running this application **must be physically connected** to your venue's amplifier, mixer, or central sound system (via a 3.5mm audio jack, Bluetooth, USB DAC, or HDMI) to broadcast the audio to your speakers.
-2.  **Default Output Device:** Make sure your desired central sound system is set as the **Default Playback Device** in Windows Sound Settings before starting the program.
+Before clicking play, please make sure of two things:
+1.  **Sound System Connection:** The computer running this application **must be physically connected** to your venue's amplifier, mixer, or central sound system (via a 3.5mm AUX jack, Bluetooth, USB DAC, or HDMI) to broadcast the audio.
+2.  **Windows Audio Settings:** Ensure your central sound system is set as the "Default Device" in Windows Sound Settings before running the player.
 
 ---
 
-## Tech Stack & Dependencies
+## How to Download & Run
 
-*   **Language:** VB.NET (Windows Forms)
-*   **Framework:** .NET Framework 4.7.2
-*   **Audio Library:** NAudio (MediaFoundationReader & WaveOutEvent)
-*   **Installer Engine:** Inno Setup
-
----
-
-## Download & Installation
-
-You do **not** need to compile the source code to run the application. We offer two clean, pre-built distribution options in our **[Releases](https://github.com/0xVasic/lobby-radio-player/releases/tag/v1.0)** section:
+You don't need to compile any code or install complicated development tools. Head over to the **[Releases](https://github.com/0xVasic/lobby-radio-player/releases/tag/v1.0)** section where two pre-built options are waiting for you:
 
 ### Option 1: Windows Installer (Recommended)
 1.  Go to **[Releases](https://github.com/0xVasic/lobby-radio-player/releases/tag/v1.0)** and download `lrp_setup.exe`.
-2.  Run the setup wizard (accept the MIT license, read the quick-start guide).
-3.  Launch the application.
+2.  Run the installer and follow the simple setup wizard.
+3.  Launch the application using the Desktop shortcut.
 
-### Option 2: Portable Version (.zip)
+### Option 2: Portable Version (No Installation)
 1.  Go to **[Releases](https://github.com/0xVasic/lobby-radio-player/releases/tag/v1.0)** and download `LobbyRadioPlayer_v1.0_Portable.zip`.
-2.  Extract the archive to any folder (or a USB drive).
-3.  Double-click `Lobby Radio Player.exe` to run the program immediately (no installation required).
+2.  Extract the ZIP archive anywhere (even on a USB flash drive).
+3.  Double-click `Lobby Radio Player.exe` and enjoy!
 
 ---
 
-## Quick-Start Guide
+## Technical Details (For Developers)
 
-1.  **Enter Stream Link:** Paste a direct audio stream URL into the *Link* field.
-    *   *Note: Standard web player links from radio websites will not work. Use direct URL directories (e.g., links containing a port like `http://example.com:8000/stream` or ending with `.mp3`, `.aac`, `.pls`).*
-2.  **Set Advertisement Interval:** Enter the desired delay between ads in seconds (e.g., `300` seconds for a 5-minute interval).
-3.  **Choose Ad File:** Click the browse button to locate and select your local audio file (`.mp3` or `.wav`).
-4.  **Start Autopilot:** Click **PLAY** to arm the system. Input fields will lock automatically to prevent accidental modifications during broadcasting. Click **STOP** to make adjustments.
+If you want to play around with the code or see how things work under the hood:
+*   **Language:** VB.NET (Windows Forms)
+*   **Framework:** .NET Framework 4.7.2 (Ensures compatibility out-of-the-box on almost any Windows 10/11 machine without downloading extra runtimes)
+*   **Audio Engine:** NAudio (MediaFoundationReader & WaveOutEvent)
+*   **Installer Engine:** Inno Setup
 
 ---
 
 ## License & Legal Disclaimer
 
-This project is open-source and licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+This project is completely free and open-source under the **MIT License** (feel free to use, modify, and share the code however you like).
 
-> **Legal Notice:** This utility is provided strictly "as-is". The end-user is entirely and solely responsible for acquiring any necessary public performance licenses, complying with national copyright laws, and obtaining appropriate broadcast permissions for commercial, public, or business environments.
+> **Important Legal Notice:** While I am sharing this tool completely free of charge, you as the business/venue owner are solely responsible for obtaining any required commercial music licenses (such as local copyright collective societies, e.g., SOKOJ, OFPS, or equivalent in your country) and broadcast permissions for public commercial spaces.
 
 ---
 
